@@ -1,6 +1,9 @@
-
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Category from './Components/Admin/Category';
+import Dashboard from './Components/Admin/Dashboard';
+import Products from './Components/Admin/Products';
+import Tags from './Components/Admin/Tags';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Home from './Components/Pages/Home';
@@ -11,24 +14,20 @@ import './_assets/css/style.css';
 
 function App() {
   return (
-
-   
     <>
-     <BrowserRouter>
      <Header/>
-
      <Routes>
-
        <Route path='/' element={<Home/>}/>
        <Route path='/shop' element={<Shop/>}/>
        <Route path='/shop/:name' element={<SingleProduct/>}/>
+       <Route path='/admin' element={<Dashboard/>}>
+
+         <Route path='/admin/products' element={<Products/>}/>
+         <Route path='/admin/category' element={<Category/>}/>
+         <Route path='/admin/tags' element={<Tags/>}/>
+       </Route>
      </Routes>
      <Footer/>
-    </BrowserRouter>
-    
-   
-    {/* <Shop/> */}
-    
     </>
   );
 }
