@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import AddTag from './Components/Admin/AddTag';
 import Category from './Components/Admin/Category';
 import Dash from './Components/Admin/Dash';
 import Dashboard from './Components/Admin/Dashboard';
@@ -27,6 +28,7 @@ function App() {
          <Route path='/admin/products' element={<Products/>}/>
          <Route path='/admin/category' element={<Category/>}/>
          <Route path='/admin/tags' element={<Tags/>}/>
+         <Route path='/admin/addTags' element={<AddTag/>}/>
        </Route>
      </Routes>
      <Footer/>

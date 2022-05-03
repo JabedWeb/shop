@@ -1,5 +1,11 @@
 {
-    "product" :[],
-    "catergory" :[],
-    "tags" :[]
+  "product": [],
+  "catergory": [],
+  "tags": [
+    {
+      "id": 1,
+      "name": "Eid 2022",
+      "slug": "eid-2022"
+    }
+  ]
 }
