@@ -10,7 +10,7 @@ const Dashboard = () => {
             <Row>
                 <Col md={3}>
                 <ul className='list-group'>
-                    <li className='list-group-item'><Link to="/admin">Dashboard</Link></li>
+                    <li className='list-group-item'><Link to="/admin/dashboard">Dashboard</Link></li>
                     <li className='list-group-item'><Link to="/admin/products">Product</Link></li>
                     <li className='list-group-item'><Link to="/admin/category">Category</Link></li>
                     <li className='list-group-item'><Link to="/admin/tags">Tags</Link></li>
@@ -19,7 +19,7 @@ const Dashboard = () => {
 
                 </Col>
                 <Col md={9} >
-                    <Outlet/>
+                <Outlet/>
                 </Col>
             </Row>
         </Container>

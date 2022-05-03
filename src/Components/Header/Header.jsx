@@ -108,7 +108,7 @@ const Header = () => {
               <Link to="#">Contact</Link>
             </li>
             <li >
-              <Link to="#">Admin</Link>
+              <Link to="/admin">Admin</Link>
             </li>
           </ul>
         </div>

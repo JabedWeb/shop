@@ -5,6 +5,7 @@ const Category = () => {
   return (
     <>
     <Button className='btn btn-sm mb-4'>Add new Directory</Button>
+    <hr/>
     <Table>
       <thead className='mb-4'>
         <th>#</th>
@@ -17,7 +18,7 @@ const Category = () => {
         <td>Men</td>
         <td>Men</td>
         <td>
-          <a href='#' className='btn btn-sm btn-info mb-4'>View</a>
+          <Button variant='success' className='btn btn-sm mb-4'>View</Button>
           <Button variant='warning' className='btn btn-sm'>Edit</Button>
           <Button  className='btn btn-sm btn-danger'>Delete</Button>
         </td>

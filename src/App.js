@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Category from './Components/Admin/Category';
+import Dash from './Components/Admin/Dash';
 import Dashboard from './Components/Admin/Dashboard';
 import Products from './Components/Admin/Products';
 import Tags from './Components/Admin/Tags';
@@ -22,6 +23,7 @@ function App() {
        <Route path='/shop/:name' element={<SingleProduct/>}/>
        <Route path='/admin' element={<Dashboard/>}>
 
+         <Route path='/admin/dashboard' element={<Dash/>}/>
          <Route path='/admin/products' element={<Products/>}/>
          <Route path='/admin/category' element={<Category/>}/>
          <Route path='/admin/tags' element={<Tags/>}/>

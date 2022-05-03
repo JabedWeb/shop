@@ -1,11 +1,10 @@
 import React from 'react'
-import { Button, Table } from 'react-bootstrap'
+import { Button, Table } from 'react-bootstrap';
 
-const Tags = () => {
+const Dash = () => {
   return (
- 
-       <>
-    <Button className='btn btn-sm mb-4'>Add new Tag</Button>
+    <>
+    <Button className='btn btn-sm mb-4'>Add Dashboard</Button>
     <hr/>
     <Table>
       <thead className='mb-4'>
@@ -29,4 +28,4 @@ const Tags = () => {
   )
 }
 
-export default Tags
+export default Dash;
