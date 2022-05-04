@@ -18,6 +18,7 @@ const Tags = () => {
     setTagUpdate(true)
     axios.get('http://localhost:5050/tags/' + id).then(res=>{
       setTags({
+        ...tags,
         name : res.data.name,
         id : res.data.id
       })
@@ -30,6 +31,22 @@ const Tags = () => {
     const handleDelete =(id)=>{
       console.log(id);
       axios.delete('http://localhost:5050/tags/' + id)
+    }
+
+
+    //slung update 
+    const makeSlug =(data)=>{
+      let arr=data.split(' ');
+      return arr.join('-').toLowerCase();
+  }
+    //submit update tag
+    const tagUpdateSubmit=(e)=>{
+      let slug =makeSlug(tags.name)
+      e.preventDefault();
+      axios.patch('http://localhost:5050/tags/' + tags.id,{
+        name : tags.name,
+        slug : slug
+      })
     }
   
 
@@ -76,10 +93,9 @@ const Tags = () => {
            tagupdate && 
          <>
           <h3>Edit Form Tag</h3>
-          <Form>
-              <Form.Control value={tags.name} onChange={e=> setTags(e.target.value)} type='text'/><br />
-              <Form.Control value={tags.id} onChange={e=> setTags(e.target.value)} type='text'/><br />
-              <Button className='btn btn-sm' type='submit'>Update</Button> 
+          <Form onSubmit={tagUpdateSubmit}>
+              <Form.Control value={tags.name} onChange={e=> setTags({...tags, name : e.target.value})} type='text'/><br />
+              <Button  className='btn btn-sm' type='submit'>Update</Button>
           </Form>
          
          </>
