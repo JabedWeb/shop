@@ -6,6 +6,11 @@
       "id": 1,
       "name": "Eid 2022",
       "slug": "eid-2022"
+    },
+    {
+      "id": 2,
+      "name": "Ok ami",
+      "slug": "ok-ami"
     }
   ]
 }

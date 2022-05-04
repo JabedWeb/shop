@@ -1,18 +1,37 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Button, Table } from 'react-bootstrap'
+import { Button, Form, Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const Tags = () => {
 
 
-  const [tag,setTag]=useState([]);
+  const [tagupdate,setTagUpdate]=useState(false);
+
+  //tag edited
+  const [tags,setTags]=useState({
+    name :'',
+    id : ''
+  });
+
+  const handleTagEdit=(id)=>{
+    setTagUpdate(true)
+    axios.get('http://localhost:5050/tags/' + id).then(res=>{
+      setTags({
+        name : res.data.name,
+        id : res.data.id
+      })
+    })
+  }
 
     //Tag deleted 
+    const [tag,setTag]=useState([]);
+
     const handleDelete =(id)=>{
       console.log(id);
       axios.delete('http://localhost:5050/tags/' + id)
     }
+  
 
   //reload purpose used ussEffect function
   useEffect(()=>{
@@ -42,8 +61,8 @@ const Tags = () => {
           <td>{data.name}</td>
           <td>{data.slug}</td>
           <td>
-            <Button variant='success' className='btn btn-sm mb-4'>View</Button>
-            <Button variant='warning' className='btn btn-sm'>Edit</Button>
+            {/* <Button variant='success' className='btn btn-sm mb-4'>View</Button> */}
+            <Button onClick={ ()=>handleTagEdit(data.id)} variant='warning' className='btn btn-sm'>Edit</Button>
             <Button onClick={ ()=> handleDelete(data.id) } className='btn btn-sm btn-danger'>Delete</Button>
           </td>
           </tr>
@@ -51,6 +70,21 @@ const Tags = () => {
         }
       </tbody>
     </Table>
+
+    <hr/>
+        {
+           tagupdate && 
+         <>
+          <h3>Edit Form Tag</h3>
+          <Form>
+              <Form.Control value={tags.name} onChange={e=> setTags(e.target.value)} type='text'/><br />
+              <Form.Control value={tags.id} onChange={e=> setTags(e.target.value)} type='text'/><br />
+              <Button className='btn btn-sm' type='submit'>Update</Button> 
+          </Form>
+         
+         </>
+        }
+
     </>
   )
 }
