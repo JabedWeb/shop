@@ -5,11 +5,6 @@
       "id": 1,
       "CategoryName": "Breakfast",
       "CategoryEmail": "author@gmail.com"
-    },
-    {
-      "id": 2,
-      "CategoryName": "Newsp",
-      "CategoryEmail": "jabed@gmail.com"
     }
   ],
   "tags": [
@@ -27,11 +22,6 @@
       "id": 4,
       "name": "Saki vai 22",
       "slug": "saki-vai-22"
-    },
-    {
-      "id": 5,
-      "name": "",
-      "slug": ""
     }
   ]
 }

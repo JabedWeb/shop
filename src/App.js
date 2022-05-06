@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import AddCategory from './Components/Admin/AddCategory';
 import AddTag from './Components/Admin/AddTag';
 import Category from './Components/Admin/Category';
 import Dash from './Components/Admin/Dash';
@@ -29,6 +30,7 @@ function App() {
          <Route path='/admin/category' element={<Category/>}/>
          <Route path='/admin/tags' element={<Tags/>}/>
          <Route path='/admin/addTags' element={<AddTag/>}/>
+         <Route path='/admin/addCategory' element={<AddCategory/>}/>
        </Route>
      </Routes>
      <Footer/>

@@ -4,10 +4,7 @@ import { Button, Form, Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const Tags = () => {
-
-
   const [tagupdate,setTagUpdate]=useState(false);
-
   //tag edited
   const [tags,setTags]=useState({
     name :'',
@@ -24,7 +21,6 @@ const Tags = () => {
       })
     })
   }
-
     //Tag deleted 
     const [tag,setTag]=useState([]);
 
@@ -32,8 +28,6 @@ const Tags = () => {
       console.log(id);
       axios.delete('http://localhost:5050/tags/' + id)
     }
-
-
     //slung update 
     const makeSlug =(data)=>{
       let arr=data.split(' ');
@@ -48,16 +42,12 @@ const Tags = () => {
         slug : slug
       })
     }
-  
-
   //reload purpose used ussEffect function
   useEffect(()=>{
     axios.get('http://localhost:5050/tags').then(res=>{
       setTag(res.data)
     })
   },[tag])
-
-
 
   return (
        <>
