@@ -120,7 +120,7 @@ const Category = () => {
         
       view && 
       <>
-      <h2>Category Details</h2>
+      <h2>Category Detail</h2>
       <h3 style={{color : "gold"}}>{viewCategory.name}</h3>
       <h5>{viewCategory.email}</h5>
       </>
